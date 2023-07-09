@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 	
+	// Banner START
 	const bannerSwiper = new Swiper('.banner-swiper', {
 		speed: 1000,
 		spaceBetween: 0,
@@ -13,7 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
 			clickable: true,
 		},
 	});
+	// Banner END
 
+
+	// Services START
 	$('.services-btn').magnificPopup({
 		type: 'inline',
 		showCloseBtn: false,
@@ -26,7 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	$('.modal-form-close').on('click', function() {
 		$.magnificPopup.close();
 	});
+	// Services END
 
+	// Gallery START
 	$('.gallery-wrap a').magnificPopup({
 		type: 'image',
 		gallery: {
@@ -65,7 +71,21 @@ document.addEventListener('DOMContentLoaded', () => {
 				}
 			});
 		}
-
 	});
+	// Gallery END
+
+
+	// Reviews START
+	const reviewsSwiper = new Swiper('.reviews-swiper', {
+		speed: 1000,
+		spaceBetween: 25,
+		slidesPerView: 3,
+		pagination: {
+			el: '.reviews-swiper .swiper-pagination',
+			type: 'bullets',
+			clickable: true,
+		},
+	});
+	// Reviews END
 
 })
