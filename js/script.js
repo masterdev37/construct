@@ -1,9 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+	// Header START
+	$('.hamburger').on('click', function() {
+
+		if($(this).hasClass('is-active')) {
+			$(this).removeClass('is-active');
+			$('.header-mobile-wrap').slideUp(500);
+		}
+		else {
+			$(this).addClass('is-active');
+			$('.header-mobile-wrap').slideDown(500);
+		}
+
+		
+
+	});
+	// Header END
 	
 	// Banner START
 	const bannerSwiper = new Swiper('.banner-swiper', {
 		speed: 1000,
 		spaceBetween: 0,
+		autoHeight: true,
 		navigation: {
 			nextEl: '.banner-swiper .swiper-button-next',
 			prevEl: '.banner-swiper .swiper-button-prev',
@@ -47,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	$('.gallery-btn a').on('click', function(e) {
-
 		e.preventDefault();
 		var galleryItem = $('.gallery-item');
 
@@ -78,13 +95,23 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Reviews START
 	const reviewsSwiper = new Swiper('.reviews-swiper', {
 		speed: 1000,
-		spaceBetween: 25,
-		slidesPerView: 3,
+		spaceBetween: 20,
 		pagination: {
 			el: '.reviews-swiper .swiper-pagination',
 			type: 'bullets',
 			clickable: true,
 		},
+		breakpoints: {
+			320: {
+				slidesPerView: 1,
+			},
+			575: {
+				slidesPerView: 2,
+			},
+			992: {
+				slidesPerView: 3,
+			},
+		  }
 	});
 	// Reviews END
 
