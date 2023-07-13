@@ -21,6 +21,10 @@ h1,h2,h3,h4,h5,h6 {
 	margin-bottom: 20px;
 }
 
+strong {
+	font-weight: 700;
+}
+
 a {
 	color: inherit;
 	text-decoration: none;
@@ -175,6 +179,7 @@ textarea::placeholder {
 	background-position: center top;
 	background-size: cover;
 	background-repeat: no-repeat;
+	min-height: 640px;
 }
 .banner-swiper .swiper-slide::before {
 	content: '';
