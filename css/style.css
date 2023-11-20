@@ -132,6 +132,12 @@ textarea::placeholder {
 	align-items: center;
 	column-gap: 28px;
 }
+.header-social a {
+	transition: opacity 0.35s ease;
+}
+.header-social a:hover {
+	opacity: 0.5;
+}
 
 .header-bottom {
 	position: absolute;
@@ -171,6 +177,12 @@ textarea::placeholder {
 	padding: 0;
 	column-gap: 50px;
 }
+.header-nav ul li a {
+	transition: color 0.35s ease;
+}
+.header-nav ul li a:hover {
+	color: #ccc9c9;
+}
 
 .header-bottom.is-fixed {
 	position: fixed;
@@ -185,6 +197,34 @@ textarea::placeholder {
 }
 .header-bottom.is-fixed .header-logo img {
 	max-width: 140px;
+}
+
+.go-up {
+	position: fixed;
+	right: 30px;
+	bottom: 30px;
+	z-index: 9;
+	transition: 0.35s ease;
+	transform: translateY(100px);
+	opacity: 0.5;
+}
+.go-up:hover {
+	opacity: 1;
+}
+.go-up.is-active {
+	transform: none;
+}
+.go-up a {
+	background-color: #D62E4C;
+	width: 60px;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: background-color 0.35s ease;
+}
+.go-up img {
+	max-width: 50%;
 }
 /* Header END */
 
