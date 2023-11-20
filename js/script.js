@@ -12,8 +12,34 @@ document.addEventListener('DOMContentLoaded', () => {
 			$('.header-mobile-wrap').slideDown(500);
 		}
 
-		
+	});
 
+	function scrollHeader() {
+		let headerTopHeight = $('.header-top').height();
+		if($(this).scrollTop() > headerTopHeight) {
+			$('.header-bottom').addClass('is-fixed');
+		}
+		else {
+			$('.header-bottom').removeClass('is-fixed');
+		}
+	}
+
+	$(window).on('scroll', function() {
+		scrollHeader();
+	});
+	scrollHeader();
+
+	$('.anchor-link').on('click', function () {
+	    let href = $(this).attr('href');
+
+	    $('html, body').animate({
+	        scrollTop: $(href).offset().top
+	    }, {
+	        duration: 700,
+	    });
+		$('.header-mobile-wrap').slideUp(500);
+		$('.hamburger').removeClass('is-active');
+	    return false;
 	});
 	// Header END
 	
@@ -39,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	$('.services-btn').magnificPopup({
 		type: 'inline',
 		showCloseBtn: false,
+		removalDelay: 500,
 		callbacks: {
 			beforeOpen: function() {
 			   this.st.mainClass = this.st.el.attr('data-effect');
@@ -70,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		if($(this).hasClass('is-active')) {
 			$(this).removeClass('is-active');
-			$(this).text('Показать еще');
+			$(this).text('Show more');
 			galleryItem.each(function() {
 				if($(this).hasClass('is-active')) {
 					$(this).removeClass('is-active');
@@ -80,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 		else {
 			$(this).addClass('is-active');
-			$(this).text('Скрыть');
+			$(this).text('Hide');
 			galleryItem.each(function() {
 				if(!$(this).is(':visible')) {
 					$(this).addClass('is-active');

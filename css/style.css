@@ -155,6 +155,9 @@ textarea::placeholder {
 	align-items: center;
 	clip-path: polygon(0px 0px, 100% 0%, 82.68% 101.20%, 0px 100%);
 }
+.header-logo a {
+	display: flex;
+}
 .header-logo img {
 	max-width: 160px;
 }
@@ -167,6 +170,21 @@ textarea::placeholder {
 	list-style-type: none;
 	padding: 0;
 	column-gap: 50px;
+}
+
+.header-bottom.is-fixed {
+	position: fixed;
+	top: 0;
+	transition: 0.35s ease;
+}
+.header-bottom.is-fixed .header-logo {
+	padding: 0 50px 5px 40px;
+}
+.header-bottom.is-fixed .header-nav {
+    padding: 0 60px;
+}
+.header-bottom.is-fixed .header-logo img {
+	max-width: 140px;
 }
 /* Header END */
 
@@ -639,7 +657,7 @@ textarea::placeholder {
 }
 
 .gallery-wrap a::before {
-	content: 'Увеличить';
+	content: 'Zoom';
 	background-color: rgba(68, 62, 62, 0.72);
 	position: absolute;
 	width: 100%;
@@ -746,7 +764,7 @@ textarea::placeholder {
 	background-color: #fff;
 }
 .team-thumb img {
-	max-width: 100%;
+	width: 100%;
 	display: block;
 }
 .team-body {
@@ -1049,6 +1067,7 @@ textarea::placeholder {
 	/* Banner 992 START */
 	.banner-swiper .swiper-slide {
 		padding: 100px 20px 130px 20px;
+		min-height: 400px;
 	}
 	.swiper-button-next {
 		right: 20px;
@@ -1546,5 +1565,24 @@ textarea::placeholder {
 	}
 	/* Form 575 END */
 
+}
+
+@media screen and (max-width: 480px) {
+	.modal-form {
+		padding: 20px 30px 50px 30px;
+	}
+	.modal-form-title {
+		font-size: 28px;
+		margin-bottom: 25px;
+	}
+	.modal-form-title::after {
+		margin: 10px auto 0 auto;
+	}
+	.modal-form input {
+		font-size: 14px;
+	}
+	.modal-form .form-button {
+		font-size: 14px;
+	}
 }
 /* Responsive END */
